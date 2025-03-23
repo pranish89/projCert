@@ -1,2 +1,2 @@
-[slave]
+[kslave1]
 172.31.0.217 ansible_user=edureka
