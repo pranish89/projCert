@@ -6,18 +6,20 @@ pipeline {
         label 'slave'
       }
       steps{        
-        sh 'wget https://apt.puppetlabs.com/puppet7-release-focal.deb
+        sh '''
+              wget https://apt.puppetlabs.com/puppet7-release-focal.deb
               sudo dpkg -i puppet7-release-focal.deb
               sudo apt-get update -y
               sudo apt-get install puppet-agent -y'
-              echo 'puppet installed successfully'
+              echo "puppet installed successfully"
+            '''
         }
     }
       
     stage("Docker Installation"){
       steps {
           sh 'ansible-playbook plabook.yaml -i inventory.txt'
-          echo 'docker installed successfully 
+          echo "docker installed successfully" 
       }
     }
 
@@ -25,21 +27,21 @@ pipeline {
             steps {
                 git branch: 'master',
                 url: 'https://github.com/pranish89/projCert.git'
-                echo 'Pulled from GitHub successfully'
+                echo "Pulled from GitHub successfully"
             }
         }
 
       stage("Building Docker"){
         steps{          
           sh 'sudo docker build -t edureka_project .
-          echo 'Docker image built'
+          echo "Docker image built"
         }
       }
 
       stage("Running the Docker"){
         steps{
           sh 'sudo docker run -d --name edureka_project -p 80:8080
-          echo 'Docker container is running'
+          echo "Docker container is running"
         }
       }
 
