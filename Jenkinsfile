@@ -40,7 +40,7 @@ pipeline {
 
       stage("Running the Docker"){
         steps{
-          sh 'sudo docker run -d --name edureka_project -p 80:8080
+          sh 'sudo docker run -d --name edureka_project -p 80:8080'
           echo "Docker container is running"
         }
       }
