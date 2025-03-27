@@ -33,7 +33,7 @@ pipeline {
 
       stage("Building Docker"){
         steps{          
-          sh 'sudo docker build -t edureka_project .
+          sh 'sudo docker build -t edureka_project . '
           echo "Docker image built"
         }
       }
