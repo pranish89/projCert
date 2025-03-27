@@ -1,8 +1,8 @@
 #image from Github provided by edureka, 
-FROM:  devopsedu/webapp
+FROM devopsedu/webapp
 
 #Copy the website to the image 
-Copy webiste /var/www/html
+Copy webiste/ /var/www/html
 
 #Expose port no
 Expose 80
