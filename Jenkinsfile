@@ -12,8 +12,12 @@ pipeline {
             '''
         }
     }
+  
       
     stage("Docker Installation"){
+      agent{
+        label 'kmaster'
+      }
       steps {
           sh 'ansible-playbook plabook.yaml -i inventory.txt'
           echo "docker installed successfully" 
