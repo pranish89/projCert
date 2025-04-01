@@ -1,2 +1,2 @@
-[kslave1]
-172.31.14.188 ansible_user=edureka
+[all]
+kslave1 ansible_user=edureka
