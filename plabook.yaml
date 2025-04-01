@@ -14,5 +14,5 @@
          - containerd.io
          - docker-buildx-plugin
          - docker-compose-plugin
-          update_cache: true
+       update_cache: true
        state: latest
