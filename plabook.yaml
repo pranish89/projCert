@@ -1,6 +1,7 @@
--name: Docker Installation
- become: true
- remote_user: Edureka
+---
+- name: Docker Installation
+  become: true
+  remote_user: Edureka
 tasks:
   -name: package update
    apt:
