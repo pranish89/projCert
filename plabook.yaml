@@ -3,12 +3,12 @@
   become: true
   remote_user: Edureka
   tasks:
-    -name: package update
-     apt:
-      update_cache: yes
-    -name: Docker Install
-     apt:
-      pkg:
+    - name: package update
+      apt:
+       update_cache: yes
+    - name: Docker Install
+      apt:
+       pkg:
          - docker-ce
          - docker-ce-cli
          - containerd.io
