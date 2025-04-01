@@ -2,6 +2,7 @@
 - name: Docker Installation
   become: true
   remote_user: Edureka
+  hosts: kslave1
   tasks:
     - name: package update
       apt:
