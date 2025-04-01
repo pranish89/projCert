@@ -42,7 +42,7 @@ pipeline {
       stage("Running the Docker"){
          agent any
         steps{
-          sh 'docker run -d -p 8081:80 edureka_project'
+          sh 'docker run -d -p 8082:80 edureka_project'
           echo "Docker container is running"
         }
       }
