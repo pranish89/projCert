@@ -2,7 +2,7 @@
 FROM devopsedu/webapp
 
 #Copy the website to the image 
-Copy webiste/ /var/www/html
+Copy website/ /var/www/html
 
 #Expose port no
 Expose 80
