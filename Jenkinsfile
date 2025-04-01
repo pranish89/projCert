@@ -34,7 +34,7 @@ pipeline {
       stage("Building Docker"){
          agent any
         steps{          
-          sh 'sudo docker build -t edureka_project . '
+          sh 'docker build -t edureka_project . '
           echo "Docker image built"
         }
       }
@@ -42,7 +42,7 @@ pipeline {
       stage("Running the Docker"){
          agent any
         steps{
-          sh 'sudo docker run -d --name edureka_project -p 80:8080'
+          sh 'docker run -d --name edureka_project -p 80:8080'
           echo "Docker container is running"
         }
       }
@@ -56,8 +56,8 @@ pipeline {
           }
         }
         steps{
-          sh 'sudo docker stop edureka_project'
-          sh 'sudo docker rm edureka_project'
+          sh 'docker stop edureka_project'
+          sh 'docker rm edureka_project'
         }
       }
    }
