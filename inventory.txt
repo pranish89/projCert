@@ -1,2 +1,2 @@
 [all]
-kslave1 ansible_user=edureka
+kslave1
