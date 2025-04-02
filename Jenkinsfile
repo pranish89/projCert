@@ -23,7 +23,9 @@ pipeline {
     }
 
       stage("Checkout from GitHub") {
-         agent any
+         agent{
+        label 'master'
+      }
             steps {
                 git branch: 'master',
                 url: 'https://github.com/pranish89/projCert.git'
