@@ -15,7 +15,9 @@ pipeline {
   
       
     stage("Docker Installation"){
-      agent any
+      agent{
+        label 'slave'
+      }
       steps {
           sh 'ansible-playbook plabook.yaml'
           echo "docker installed successfully" 
@@ -23,8 +25,8 @@ pipeline {
     }
 
       stage("Checkout from GitHub") {
-         agent{
-        label 'master'
+        agent{
+        label 'slave'
       }
             steps {
                 git branch: 'master',
@@ -34,8 +36,8 @@ pipeline {
         }
 
       stage("Building Docker"){
-          agent{
-        label 'master'
+       agent{
+        label 'slave'
       }
         steps{          
           sh 'docker build -t edureka_project . '
@@ -44,8 +46,8 @@ pipeline {
       }
 
       stage("Running the Docker"){
-           agent{
-        label 'master'
+      agent{
+        label 'slave'
       }
         steps{
           sh 'docker run -d -p 8082:80 edureka_project'
@@ -54,8 +56,8 @@ pipeline {
       }
 
       stage("Delete Container"){
-          agent{
-        label 'master'
+       agent{
+        label 'slave'
       }
         when{
           expression{
