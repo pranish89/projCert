@@ -34,7 +34,9 @@ pipeline {
         }
 
       stage("Building Docker"){
-         agent any
+          agent{
+        label 'master'
+      }
         steps{          
           sh 'docker build -t edureka_project . '
           echo "Docker image built"
@@ -42,7 +44,9 @@ pipeline {
       }
 
       stage("Running the Docker"){
-         agent any
+           agent{
+        label 'master'
+      }
         steps{
           sh 'docker run -d -p 8082:80 edureka_project'
           echo "Docker container is running"
@@ -50,7 +54,9 @@ pipeline {
       }
 
       stage("Delete Container"){
-         agent any
+          agent{
+        label 'master'
+      }
         when{
           expression{
             currentBuild.result == 'FAILURE' ||
