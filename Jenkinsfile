@@ -19,7 +19,7 @@ pipeline {
         label 'slave'
       }
       steps {
-          sh 'ansible-playbook plabook.yaml'
+          sh 'ansible-playbook -i inventory.txt plabook.yaml'
           echo "docker installed successfully" 
       }
     }
