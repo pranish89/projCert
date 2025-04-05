@@ -53,7 +53,7 @@ pipeline {
         label 'slave'
       }
         steps{
-          sh 'sudo docker run -d -p 8082:80 edureka_project'
+          sh 'sudo docker run -d -p 8083:80 edureka_project'
           echo "Docker container is running"
         }
       }
