@@ -1,7 +1,7 @@
 ---
 - name: Docker Installation
   become: true
-  remote_user: Edureka
+  remote_user: edureka
   hosts: all
   tasks:
     - name: package update
