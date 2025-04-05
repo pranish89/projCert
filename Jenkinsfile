@@ -22,7 +22,7 @@ pipeline {
         label 'slave'
       }
       steps {
-          sh 'sudo ansible-playbook -i inventory plabook.yaml --ask-pass'
+          sh 'sudo ansible-playbook -i inventory.txt plabook.yaml --ask-pass'
           echo "docker installed successfully" 
       }
     }
