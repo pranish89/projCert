@@ -40,7 +40,7 @@ pipeline {
         label 'slave'
       }
         steps{          
-          sh 'docker build -t edureka_project . '
+          sh 'sudo docker build -t edureka_project . '
           echo "Docker image built"
         }
       }
